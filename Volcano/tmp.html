@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ENSG00000086015</title>
+    <!-- Plotly.js -->
+   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  </head>
+
+  <body>
+  <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
+  <script>
+    var trace1 = {
+      type: 'scatter',
+      y: [26,21,7,54],
+      x: ['normal', 'normal', 'tumour', `tumour`],
+      mode: 'markers',
+      name: 'condition',
+      marker: {
+        color: 'rgba(0, 0, 0, 0.95)',
+        line: {
+          color: 'rgba(0, 0, 0, 1.0)',
+          width: 1,
+        },
+        symbol: 'circle',
+        size: 16
+      }
+    };
+
+    var data = [trace1];
+
+    var layout = {
+      title: {
+        text: 'ENSG00000086015',
+        font: {
+          family: 'Times New Roman',
+          size: 25,
+          color: 'rgba(0, 0, 0, 1.0)'
+        }
+      },
+      yaxis: {
+        showgrid: false,
+        showline: true,
+        linecolor: 'rgb(102, 102, 102)',
+        titlefont: {
+          font: {
+            color: 'rgb(204, 204, 204)'
+          }
+        },
+        tickfont: {
+          font: {
+            color: 'rgb(102, 102, 102)'
+          }
+        },
+        autotick: false,
+        dtick: 10,
+        ticks: 'outside',
+        tickcolor: 'rgb(102, 102, 102)',
+        title: {
+          text: 'gene count',
+          font: {
+            family: 'Times New Roman',
+            size: 18,
+            color: 'rgba(0, 0, 0, 1.0)'
+          }
+        },
+      },
+      xaxis: {
+        showline: true,
+        title: {
+          text: 'condition',
+          font: {
+            family: 'Times New Roman',
+            size: 18,
+            color: 'rgba(0, 0, 0, 1.0)'
+          }
+        }
+      },
+      margin: {
+        l: 140,
+        r: 40,
+        b: 50,
+        t: 80
+      },
+      legend: {
+        font: {
+          size: 10,
+        },
+        yanchor: 'middle',
+        xanchor: 'right'
+      },
+      width: 600,
+      height: 600,
+      paper_bgcolor: 'rgb(254, 247, 234)',
+      plot_bgcolor: 'rgb(254, 247, 234)',
+      hovermode: 'closest'
+    };
+
+    Plotly.newPlot('myDiv', data, layout, {displayModeBar: false});
+  </script>
+  </body>
+</html>
