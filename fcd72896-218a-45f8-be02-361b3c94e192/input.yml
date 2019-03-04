@@ -1,0 +1,48 @@
+DESeq2_script:
+  class: File
+  path: /data/tony/RNASeq/scripts/Basic_DESeq2.R
+HISAT2Index:
+  class: Directory
+  path: /data/tony/RNASeq/tests/ht2_index
+annotation:
+  class: File
+  path: /data/tony/RNASeq/tests/test.gtf
+dexseq_script:
+  class: File
+  path: /data/tony/RNASeq/scripts/Basic_DEXSeq_scripts/DEXSeq.R
+fastq1:
+- class: File
+  path: /data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/fastq/test1.1.fastq.gz
+- class: File
+  path: /data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/fastq/test1.2.fastq.gz
+fastq2:
+- class: File
+  path: /data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/fastq/test3.fastq
+fastq3:
+- class: File
+  path: /data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/fastq/test2.1.fastq
+- class: File
+  path: /data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/fastq/test2.2.fastq
+fastq4:
+- class: File
+  path: /data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/fastq/test4.fastq
+htseq_count_script:
+  class: File
+  path: /data/tony/RNASeq/scripts/Basic_DEXSeq_scripts/dexseq_count_modified.py
+htseq_prepare_script:
+  class: File
+  path: /data/tony/RNASeq/scripts/Basic_DEXSeq_scripts/dexseq_prepare.py
+metadata:
+  class: File
+  path: /data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/metadata.csv
+prepDE_script:
+  class: File
+  path: /data/tony/RNASeq/scripts/prepDE.py
+star_genomedir:
+  class: Directory
+  path: /data/tony/RNASeq/tests/GenomeIndex
+subject_name1: test1
+subject_name2: test3
+subject_name3: test2
+subject_name4: test4
+threads: 2

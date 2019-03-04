@@ -1,0 +1,1678 @@
+[2019-03-04 13:03:20] /project/soft/linux64/anaconda/Anaconda3-2018.12-Linux-x86_64/bin/cwl-runner 1.0.20181217162649
+[2019-03-04 13:03:20] Resolved '/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/workflow.cwl' to 'file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/workflow.cwl'
+[2019-03-04 13:03:24] [workflow ] start
+[2019-03-04 13:03:24] [workflow ] starting step star_1
+[2019-03-04 13:03:24] [step star_1] start
+[2019-03-04 13:03:25] [job star_1] /tmp/b0kkcg2_$ docker \
+    run \
+    -i \
+    --volume=/tmp/b0kkcg2_:/FxDpvz:rw \
+    --volume=/tmp/lv9dw04q:/tmp:rw \
+    --volume=/data/tony/RNASeq/tests/GenomeIndex:/var/lib/cwl/stg8f8b709b-68d6-4450-bb80-954d77f44be6/GenomeIndex:ro \
+    --volume=/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/fastq/test1.1.fastq.gz:/var/lib/cwl/stgf2619207-78df-41c1-995c-8e756b971591/test1.1.fastq.gz:ro \
+    --volume=/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/fastq/test1.2.fastq.gz:/var/lib/cwl/stga56f616f-14d3-4f2a-b98c-d4b2f99758fd/test1.2.fastq.gz:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmpb203kpb6/20190304130325-201218.cid \
+    quay.io/biocontainers/star:2.6.0c--0 \
+    /bin/sh \
+    -c \
+    'mkdir' 'test1' && cd 'test1' && STAR '--readFilesCommand gunzip -c' '--runThreadN' '2' '--genomeDir' '/var/lib/cwl/stg8f8b709b-68d6-4450-bb80-954d77f44be6/GenomeIndex' '--readFilesIn' '/var/lib/cwl/stgf2619207-78df-41c1-995c-8e756b971591/test1.1.fastq.gz' '/var/lib/cwl/stga56f616f-14d3-4f2a-b98c-d4b2f99758fd/test1.2.fastq.gz' '--outFileNamePrefix' 'test1' '--outSAMstrandField' 'intronMotif'
+Mar 04 13:03:25 ..... started STAR run
+Mar 04 13:03:25 ..... loading genome
+Mar 04 13:03:25 ..... started mapping
+Mar 04 13:03:26 ..... finished successfully
+[2019-03-04 13:03:26] [job star_1] Max memory used: 0MiB
+[2019-03-04 13:03:26] [job star_1] completed success
+[2019-03-04 13:03:26] [step star_1] completed success
+[2019-03-04 13:03:26] [workflow ] starting step htseq_prepare
+[2019-03-04 13:03:26] [step htseq_prepare] start
+[2019-03-04 13:03:26] [job htseq_prepare] /tmp/4tfsa51r$ docker \
+    run \
+    -i \
+    --volume=/tmp/4tfsa51r:/FxDpvz:rw \
+    --volume=/tmp/z8p2w84w:/tmp:rw \
+    --volume=/data/tony/RNASeq/tests/test.gtf:/var/lib/cwl/stgfe560cff-15a1-45eb-ba00-c256ef826e20/test.gtf:ro \
+    --volume=/data/tony/RNASeq/scripts/Basic_DEXSeq_scripts/dexseq_prepare.py:/var/lib/cwl/stgfe93c34f-20d1-4cc4-a9c8-384f3d30c718/dexseq_prepare.py:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmp5is_cljc/20190304130326-423526.cid \
+    genomicpariscentre/htseq \
+    python \
+    /var/lib/cwl/stgfe93c34f-20d1-4cc4-a9c8-384f3d30c718/dexseq_prepare.py \
+    /var/lib/cwl/stgfe560cff-15a1-45eb-ba00-c256ef826e20/test.gtf \
+    test.gff
+[2019-03-04 13:03:27] [job htseq_prepare] Max memory used: 0MiB
+[2019-03-04 13:03:27] [job htseq_prepare] completed success
+[2019-03-04 13:03:27] [step htseq_prepare] completed success
+[2019-03-04 13:03:27] [workflow ] starting step hisat2_3
+[2019-03-04 13:03:27] [step hisat2_3] start
+[2019-03-04 13:03:27] [job hisat2_3] /tmp/_eljk2pz$ docker \
+    run \
+    -i \
+    --volume=/tmp/_eljk2pz:/FxDpvz:rw \
+    --volume=/tmp/eq9nfel8:/tmp:rw \
+    --volume=/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/fastq/test2.1.fastq:/var/lib/cwl/stgcc8e777f-0a9c-4dce-87ee-4fd81f5cfc9f/test2.1.fastq:ro \
+    --volume=/data/tony/RNASeq/tests/ht2_index:/var/lib/cwl/stgef2a7505-61d9-4ab8-99c0-a508d9f49ff4/ht2_index:ro \
+    --volume=/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/fastq/test2.2.fastq:/var/lib/cwl/stga12f5a27-a193-44c0-a765-651be50d0d2e/test2.2.fastq:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmpbitgwhwy/20190304130327-650796.cid \
+    quay.io/biocontainers/hisat2:2.1.0--py27h2d50403_2 \
+    /bin/sh \
+    -c \
+    'mkdir' 'test2' && cd 'test2' && hisat2 '-q' '-x' '/var/lib/cwl/stgef2a7505-61d9-4ab8-99c0-a508d9f49ff4/ht2_index/test_index' '-1' '/var/lib/cwl/stgcc8e777f-0a9c-4dce-87ee-4fd81f5cfc9f/test2.1.fastq' '-2' '/var/lib/cwl/stga12f5a27-a193-44c0-a765-651be50d0d2e/test2.2.fastq' '-S' 'test2.sam' '-p' '2' '--dta' '--summary-file' 'log.txt'
+520 reads; of these:
+  520 (100.00%) were paired; of these:
+    30 (5.77%) aligned concordantly 0 times
+    490 (94.23%) aligned concordantly exactly 1 time
+    0 (0.00%) aligned concordantly >1 times
+    ----
+    30 pairs aligned concordantly 0 times; of these:
+      0 (0.00%) aligned discordantly 1 time
+    ----
+    30 pairs aligned 0 times concordantly or discordantly; of these:
+      60 mates make up the pairs; of these:
+        30 (50.00%) aligned 0 times
+        30 (50.00%) aligned exactly 1 time
+        0 (0.00%) aligned >1 times
+97.12% overall alignment rate
+[2019-03-04 13:03:28] [job hisat2_3] Max memory used: 0MiB
+[2019-03-04 13:03:28] [job hisat2_3] completed success
+[2019-03-04 13:03:28] [step hisat2_3] completed success
+[2019-03-04 13:03:28] [workflow ] starting step star_4
+[2019-03-04 13:03:28] [step star_4] start
+[2019-03-04 13:03:28] [job star_4] /tmp/o5xodrmx$ docker \
+    run \
+    -i \
+    --volume=/tmp/o5xodrmx:/FxDpvz:rw \
+    --volume=/tmp/quct3jyz:/tmp:rw \
+    --volume=/data/tony/RNASeq/tests/GenomeIndex:/var/lib/cwl/stg3cf80e7d-923d-40c5-82d3-2b49b8fec907/GenomeIndex:ro \
+    --volume=/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/fastq/test4.fastq:/var/lib/cwl/stgaffeb087-f4d7-46d7-85a9-7efd429651f4/test4.fastq:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmpeosrs_da/20190304130328-795263.cid \
+    quay.io/biocontainers/star:2.6.0c--0 \
+    /bin/sh \
+    -c \
+    'mkdir' 'test4' && cd 'test4' && STAR '' '--runThreadN' '2' '--genomeDir' '/var/lib/cwl/stg3cf80e7d-923d-40c5-82d3-2b49b8fec907/GenomeIndex' '--readFilesIn' '/var/lib/cwl/stgaffeb087-f4d7-46d7-85a9-7efd429651f4/test4.fastq' '--outFileNamePrefix' 'test4' '--outSAMstrandField' 'intronMotif'
+Mar 04 13:03:29 ..... started STAR run
+Mar 04 13:03:29 ..... loading genome
+Mar 04 13:03:29 ..... started mapping
+Mar 04 13:03:29 ..... finished successfully
+[2019-03-04 13:03:29] [job star_4] Max memory used: 0MiB
+[2019-03-04 13:03:29] [job star_4] completed success
+[2019-03-04 13:03:29] [step star_4] completed success
+[2019-03-04 13:03:29] [workflow ] starting step hisat2_samtools_3
+[2019-03-04 13:03:29] [step hisat2_samtools_3] start
+[2019-03-04 13:03:29] [job hisat2_samtools_3] /tmp/5xawefeg$ docker \
+    run \
+    -i \
+    --volume=/tmp/5xawefeg:/FxDpvz:rw \
+    --volume=/tmp/9n85uezw:/tmp:rw \
+    --volume=/tmp/_eljk2pz/test2/test2.sam:/var/lib/cwl/stg7e382914-3c5d-4a16-a8f3-f9478eab4868/test2.sam:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmpmb4mr4td/20190304130329-986577.cid \
+    genomicpariscentre/samtools \
+    samtools \
+    sort \
+    '-@' \
+    2 \
+    -o \
+    test2.bam \
+    /var/lib/cwl/stg7e382914-3c5d-4a16-a8f3-f9478eab4868/test2.sam
+[2019-03-04 13:03:31] [job hisat2_samtools_3] Max memory used: 0MiB
+[2019-03-04 13:03:31] [job hisat2_samtools_3] completed success
+[2019-03-04 13:03:31] [step hisat2_samtools_3] completed success
+[2019-03-04 13:03:31] [workflow ] starting step star_3
+[2019-03-04 13:03:31] [step star_3] start
+[2019-03-04 13:03:31] [job star_3] /tmp/nwb3_u7z$ docker \
+    run \
+    -i \
+    --volume=/tmp/nwb3_u7z:/FxDpvz:rw \
+    --volume=/tmp/z4bwwcdx:/tmp:rw \
+    --volume=/data/tony/RNASeq/tests/GenomeIndex:/var/lib/cwl/stg9ab74d12-a9a6-4767-9b92-0f72bc04c21e/GenomeIndex:ro \
+    --volume=/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/fastq/test2.1.fastq:/var/lib/cwl/stg725d9a6c-b27e-428c-afb3-fa9b15661dab/test2.1.fastq:ro \
+    --volume=/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/fastq/test2.2.fastq:/var/lib/cwl/stg082405ce-2323-4499-9938-032e4f69c512/test2.2.fastq:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmp_95pztdw/20190304130331-135361.cid \
+    quay.io/biocontainers/star:2.6.0c--0 \
+    /bin/sh \
+    -c \
+    'mkdir' 'test2' && cd 'test2' && STAR '' '--runThreadN' '2' '--genomeDir' '/var/lib/cwl/stg9ab74d12-a9a6-4767-9b92-0f72bc04c21e/GenomeIndex' '--readFilesIn' '/var/lib/cwl/stg725d9a6c-b27e-428c-afb3-fa9b15661dab/test2.1.fastq' '/var/lib/cwl/stg082405ce-2323-4499-9938-032e4f69c512/test2.2.fastq' '--outFileNamePrefix' 'test2' '--outSAMstrandField' 'intronMotif'
+Mar 04 13:03:31 ..... started STAR run
+Mar 04 13:03:31 ..... loading genome
+Mar 04 13:03:31 ..... started mapping
+Mar 04 13:03:31 ..... finished successfully
+[2019-03-04 13:03:32] [job star_3] Max memory used: 0MiB
+[2019-03-04 13:03:32] [job star_3] completed success
+[2019-03-04 13:03:32] [step star_3] completed success
+[2019-03-04 13:03:32] [workflow ] starting step hisat2_4
+[2019-03-04 13:03:32] [step hisat2_4] start
+[2019-03-04 13:03:32] [job hisat2_4] /tmp/nfwuzcbc$ docker \
+    run \
+    -i \
+    --volume=/tmp/nfwuzcbc:/FxDpvz:rw \
+    --volume=/tmp/zrufh14k:/tmp:rw \
+    --volume=/data/tony/RNASeq/tests/ht2_index:/var/lib/cwl/stg955686c0-93d4-44aa-ac36-3ecd5c939c24/ht2_index:ro \
+    --volume=/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/fastq/test4.fastq:/var/lib/cwl/stgf4d05fe1-b473-4d2a-92c4-b29170d95d6d/test4.fastq:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmp8d6s3pmu/20190304130332-266710.cid \
+    quay.io/biocontainers/hisat2:2.1.0--py27h2d50403_2 \
+    /bin/sh \
+    -c \
+    'mkdir' 'test4' && cd 'test4' && hisat2 '-q' '-x' '/var/lib/cwl/stg955686c0-93d4-44aa-ac36-3ecd5c939c24/ht2_index/test_index' '-U' '/var/lib/cwl/stgf4d05fe1-b473-4d2a-92c4-b29170d95d6d/test4.fastq' '-S' 'test4.sam' '-p' '2' '--dta' '--summary-file' 'log.txt'
+590 reads; of these:
+  590 (100.00%) were unpaired; of these:
+    25 (4.24%) aligned 0 times
+    565 (95.76%) aligned exactly 1 time
+    0 (0.00%) aligned >1 times
+95.76% overall alignment rate
+[2019-03-04 13:03:33] [job hisat2_4] Max memory used: 0MiB
+[2019-03-04 13:03:33] [job hisat2_4] completed success
+[2019-03-04 13:03:33] [step hisat2_4] completed success
+[2019-03-04 13:03:33] [workflow ] starting step hisat2_samtools_htseq_3
+[2019-03-04 13:03:33] [step hisat2_samtools_htseq_3] start
+[2019-03-04 13:03:33] [job hisat2_samtools_htseq_3] /tmp/_74n1s9r$ docker \
+    run \
+    -i \
+    --volume=/tmp/_74n1s9r:/FxDpvz:rw \
+    --volume=/tmp/zqf6kn8b:/tmp:rw \
+    --volume=/tmp/5xawefeg/test2.bam:/var/lib/cwl/stg80bbe280-4b11-443e-b319-d0ac3dece490/test2.bam:ro \
+    --volume=/tmp/4tfsa51r/test.gff:/var/lib/cwl/stg65d9d44a-bd68-4dbc-a561-7685fa0402ed/test.gff:ro \
+    --volume=/data/tony/RNASeq/scripts/Basic_DEXSeq_scripts/dexseq_count_modified.py:/var/lib/cwl/stg5bc8d6c6-d052-4ee4-875c-21ed03780d26/dexseq_count_modified.py:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmpo2831x7y/20190304130333-452422.cid \
+    genomicpariscentre/htseq:0.11.0 \
+    python \
+    /var/lib/cwl/stg5bc8d6c6-d052-4ee4-875c-21ed03780d26/dexseq_count_modified.py \
+    -p \
+    yes \
+    -s \
+    no \
+    -f \
+    bam \
+    -r \
+    pos \
+    /var/lib/cwl/stg65d9d44a-bd68-4dbc-a561-7685fa0402ed/test.gff \
+    /var/lib/cwl/stg80bbe280-4b11-443e-b319-d0ac3dece490/test2.bam \
+    test2_htseq_count.csv
+[2019-03-04 13:03:34] [job hisat2_samtools_htseq_3] Max memory used: 0MiB
+[2019-03-04 13:03:34] [job hisat2_samtools_htseq_3] completed success
+[2019-03-04 13:03:34] [step hisat2_samtools_htseq_3] completed success
+[2019-03-04 13:03:34] [workflow ] starting step hisat2_samtools_4
+[2019-03-04 13:03:34] [step hisat2_samtools_4] start
+[2019-03-04 13:03:34] [job hisat2_samtools_4] /tmp/w5v6xyvh$ docker \
+    run \
+    -i \
+    --volume=/tmp/w5v6xyvh:/FxDpvz:rw \
+    --volume=/tmp/ohg0_20r:/tmp:rw \
+    --volume=/tmp/nfwuzcbc/test4/test4.sam:/var/lib/cwl/stg820e288d-4522-4241-ba07-72039d63c713/test4.sam:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmpfuc7csne/20190304130334-552174.cid \
+    genomicpariscentre/samtools \
+    samtools \
+    sort \
+    '-@' \
+    2 \
+    -o \
+    test4.bam \
+    /var/lib/cwl/stg820e288d-4522-4241-ba07-72039d63c713/test4.sam
+[2019-03-04 13:03:35] [job hisat2_samtools_4] Max memory used: 0MiB
+[2019-03-04 13:03:35] [job hisat2_samtools_4] completed success
+[2019-03-04 13:03:35] [step hisat2_samtools_4] completed success
+[2019-03-04 13:03:35] [workflow ] starting step star_samtools_1
+[2019-03-04 13:03:35] [step star_samtools_1] start
+[2019-03-04 13:03:35] [job star_samtools_1] /tmp/vpflh0i_$ docker \
+    run \
+    -i \
+    --volume=/tmp/vpflh0i_:/FxDpvz:rw \
+    --volume=/tmp/thqxi4kl:/tmp:rw \
+    --volume=/tmp/b0kkcg2_/test1/test1Aligned.out.sam:/var/lib/cwl/stge3cc38ea-c521-488e-b7dc-0c77ecf527e8/test1Aligned.out.sam:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmprcmmwu0s/20190304130335-655625.cid \
+    genomicpariscentre/samtools \
+    samtools \
+    sort \
+    '-@' \
+    2 \
+    -o \
+    test1.bam \
+    /var/lib/cwl/stge3cc38ea-c521-488e-b7dc-0c77ecf527e8/test1Aligned.out.sam
+[2019-03-04 13:03:36] [job star_samtools_1] Max memory used: 0MiB
+[2019-03-04 13:03:36] [job star_samtools_1] completed success
+[2019-03-04 13:03:36] [step star_samtools_1] completed success
+[2019-03-04 13:03:36] [workflow ] starting step star_samtools_stringtie_1
+[2019-03-04 13:03:36] [step star_samtools_stringtie_1] start
+[2019-03-04 13:03:36] [job star_samtools_stringtie_1] /tmp/ypowmbvv$ docker \
+    run \
+    -i \
+    --volume=/tmp/ypowmbvv:/FxDpvz:rw \
+    --volume=/tmp/w3osipbj:/tmp:rw \
+    --volume=/tmp/vpflh0i_/test1.bam:/var/lib/cwl/stg18076263-7be6-49c0-a8e2-c6080c4e578a/test1.bam:ro \
+    --volume=/data/tony/RNASeq/tests/test.gtf:/var/lib/cwl/stgba226639-3faf-4992-a8ee-ed01ab4b28f9/test.gtf:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmpa69vjdot/20190304130336-841001.cid \
+    quay.io/biocontainers/stringtie:1.3.0--hd28b015_2 \
+    stringtie \
+    -eB \
+    /var/lib/cwl/stg18076263-7be6-49c0-a8e2-c6080c4e578a/test1.bam \
+    -p \
+    2 \
+    -G \
+    /var/lib/cwl/stgba226639-3faf-4992-a8ee-ed01ab4b28f9/test.gtf \
+    -o \
+    test1.gtf
+[2019-03-04 13:03:37] [job star_samtools_stringtie_1] Max memory used: 0MiB
+[2019-03-04 13:03:37] [job star_samtools_stringtie_1] completed success
+[2019-03-04 13:03:37] [step star_samtools_stringtie_1] completed success
+[2019-03-04 13:03:37] [workflow ] starting step hisat2_samtools_stringtie_3
+[2019-03-04 13:03:37] [step hisat2_samtools_stringtie_3] start
+[2019-03-04 13:03:37] [job hisat2_samtools_stringtie_3] /tmp/9lerzuep$ docker \
+    run \
+    -i \
+    --volume=/tmp/9lerzuep:/FxDpvz:rw \
+    --volume=/tmp/bt58q3sn:/tmp:rw \
+    --volume=/tmp/5xawefeg/test2.bam:/var/lib/cwl/stg49626050-e8d4-4fe1-b289-07496488c037/test2.bam:ro \
+    --volume=/data/tony/RNASeq/tests/test.gtf:/var/lib/cwl/stg2655e882-67cf-45ae-aa51-6edb740a854c/test.gtf:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmp_1ee2gkb/20190304130337-946811.cid \
+    quay.io/biocontainers/stringtie:1.3.0--hd28b015_2 \
+    stringtie \
+    -eB \
+    /var/lib/cwl/stg49626050-e8d4-4fe1-b289-07496488c037/test2.bam \
+    -p \
+    2 \
+    -G \
+    /var/lib/cwl/stg2655e882-67cf-45ae-aa51-6edb740a854c/test.gtf \
+    -o \
+    test2.gtf
+[2019-03-04 13:03:39] [job hisat2_samtools_stringtie_3] Max memory used: 0MiB
+[2019-03-04 13:03:39] [job hisat2_samtools_stringtie_3] completed success
+[2019-03-04 13:03:39] [step hisat2_samtools_stringtie_3] completed success
+[2019-03-04 13:03:39] [workflow ] starting step hisat2_1
+[2019-03-04 13:03:39] [step hisat2_1] start
+[2019-03-04 13:03:39] [job hisat2_1] /tmp/fqdm2hn6$ docker \
+    run \
+    -i \
+    --volume=/tmp/fqdm2hn6:/FxDpvz:rw \
+    --volume=/tmp/g0fpuynw:/tmp:rw \
+    --volume=/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/fastq/test1.1.fastq.gz:/var/lib/cwl/stg6ee8ec17-f8a9-4c10-847e-a98ab68cc56c/test1.1.fastq.gz:ro \
+    --volume=/data/tony/RNASeq/tests/ht2_index:/var/lib/cwl/stg38f059e4-0495-4306-bcde-b15175743c06/ht2_index:ro \
+    --volume=/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/fastq/test1.2.fastq.gz:/var/lib/cwl/stgd892cbc7-6e43-4f91-a933-b56ed252f533/test1.2.fastq.gz:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmp_b0nhrm2/20190304130339-092247.cid \
+    quay.io/biocontainers/hisat2:2.1.0--py27h2d50403_2 \
+    /bin/sh \
+    -c \
+    'mkdir' 'test1' && cd 'test1' && hisat2 '-q' '-x' '/var/lib/cwl/stg38f059e4-0495-4306-bcde-b15175743c06/ht2_index/test_index' '-1' '/var/lib/cwl/stg6ee8ec17-f8a9-4c10-847e-a98ab68cc56c/test1.1.fastq.gz' '-2' '/var/lib/cwl/stgd892cbc7-6e43-4f91-a933-b56ed252f533/test1.2.fastq.gz' '-S' 'test1.sam' '-p' '2' '--dta' '--summary-file' 'log.txt'
+2120 reads; of these:
+  2120 (100.00%) were paired; of these:
+    139 (6.56%) aligned concordantly 0 times
+    1981 (93.44%) aligned concordantly exactly 1 time
+    0 (0.00%) aligned concordantly >1 times
+    ----
+    139 pairs aligned concordantly 0 times; of these:
+      0 (0.00%) aligned discordantly 1 time
+    ----
+    139 pairs aligned 0 times concordantly or discordantly; of these:
+      278 mates make up the pairs; of these:
+        139 (50.00%) aligned 0 times
+        139 (50.00%) aligned exactly 1 time
+        0 (0.00%) aligned >1 times
+96.72% overall alignment rate
+[2019-03-04 13:03:40] [job hisat2_1] Max memory used: 0MiB
+[2019-03-04 13:03:40] [job hisat2_1] completed success
+[2019-03-04 13:03:40] [step hisat2_1] completed success
+[2019-03-04 13:03:40] [workflow ] starting step hisat2_samtools_stringtie_4
+[2019-03-04 13:03:40] [step hisat2_samtools_stringtie_4] start
+[2019-03-04 13:03:40] [job hisat2_samtools_stringtie_4] /tmp/ipk7jysn$ docker \
+    run \
+    -i \
+    --volume=/tmp/ipk7jysn:/FxDpvz:rw \
+    --volume=/tmp/c0vh1qfa:/tmp:rw \
+    --volume=/tmp/w5v6xyvh/test4.bam:/var/lib/cwl/stgec4f1d0b-6664-494f-a69b-b00ac0a4ba05/test4.bam:ro \
+    --volume=/data/tony/RNASeq/tests/test.gtf:/var/lib/cwl/stg44ef841c-d195-4563-bfd4-617a2e05523b/test.gtf:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmp1wfzg6wa/20190304130340-189905.cid \
+    quay.io/biocontainers/stringtie:1.3.0--hd28b015_2 \
+    stringtie \
+    -eB \
+    /var/lib/cwl/stgec4f1d0b-6664-494f-a69b-b00ac0a4ba05/test4.bam \
+    -p \
+    2 \
+    -G \
+    /var/lib/cwl/stg44ef841c-d195-4563-bfd4-617a2e05523b/test.gtf \
+    -o \
+    test4.gtf
+[2019-03-04 13:03:41] [job hisat2_samtools_stringtie_4] Max memory used: 0MiB
+[2019-03-04 13:03:41] [job hisat2_samtools_stringtie_4] completed success
+[2019-03-04 13:03:41] [step hisat2_samtools_stringtie_4] completed success
+[2019-03-04 13:03:41] [workflow ] starting step star_2
+[2019-03-04 13:03:41] [step star_2] start
+[2019-03-04 13:03:41] [job star_2] /tmp/nxt0hifd$ docker \
+    run \
+    -i \
+    --volume=/tmp/nxt0hifd:/FxDpvz:rw \
+    --volume=/tmp/lkm3vp5b:/tmp:rw \
+    --volume=/data/tony/RNASeq/tests/GenomeIndex:/var/lib/cwl/stg41a60b26-bb80-47d5-bd88-60d156d554a5/GenomeIndex:ro \
+    --volume=/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/fastq/test3.fastq:/var/lib/cwl/stgb1d5f794-b4c5-4ccc-8197-b5e3ebc4ad89/test3.fastq:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmp0hketu02/20190304130341-327507.cid \
+    quay.io/biocontainers/star:2.6.0c--0 \
+    /bin/sh \
+    -c \
+    'mkdir' 'test3' && cd 'test3' && STAR '' '--runThreadN' '2' '--genomeDir' '/var/lib/cwl/stg41a60b26-bb80-47d5-bd88-60d156d554a5/GenomeIndex' '--readFilesIn' '/var/lib/cwl/stgb1d5f794-b4c5-4ccc-8197-b5e3ebc4ad89/test3.fastq' '--outFileNamePrefix' 'test3' '--outSAMstrandField' 'intronMotif'
+Mar 04 13:03:41 ..... started STAR run
+Mar 04 13:03:41 ..... loading genome
+Mar 04 13:03:41 ..... started mapping
+Mar 04 13:03:42 ..... finished successfully
+[2019-03-04 13:03:42] [job star_2] Max memory used: 0MiB
+[2019-03-04 13:03:42] [job star_2] completed success
+[2019-03-04 13:03:42] [step star_2] completed success
+[2019-03-04 13:03:42] [workflow ] starting step star_samtools_2
+[2019-03-04 13:03:42] [step star_samtools_2] start
+[2019-03-04 13:03:42] [job star_samtools_2] /tmp/cihx1xqg$ docker \
+    run \
+    -i \
+    --volume=/tmp/cihx1xqg:/FxDpvz:rw \
+    --volume=/tmp/lgzdl7k1:/tmp:rw \
+    --volume=/tmp/nxt0hifd/test3/test3Aligned.out.sam:/var/lib/cwl/stg004ea823-87ca-442e-85c1-6b5abfbf26c5/test3Aligned.out.sam:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmpccj1hdqr/20190304130342-444076.cid \
+    genomicpariscentre/samtools \
+    samtools \
+    sort \
+    '-@' \
+    2 \
+    -o \
+    test3.bam \
+    /var/lib/cwl/stg004ea823-87ca-442e-85c1-6b5abfbf26c5/test3Aligned.out.sam
+[2019-03-04 13:03:43] [job star_samtools_2] Max memory used: 0MiB
+[2019-03-04 13:03:43] [job star_samtools_2] completed success
+[2019-03-04 13:03:43] [step star_samtools_2] completed success
+[2019-03-04 13:03:43] [workflow ] starting step htseq_prepare_folder
+[2019-03-04 13:03:43] [step htseq_prepare_folder] start
+[2019-03-04 13:03:43] [step htseq_prepare_folder] completed success
+[2019-03-04 13:03:43] [workflow ] starting step hisat2_2
+[2019-03-04 13:03:43] [step hisat2_2] start
+[2019-03-04 13:03:43] [job hisat2_2] /tmp/c9vdjlvw$ docker \
+    run \
+    -i \
+    --volume=/tmp/c9vdjlvw:/FxDpvz:rw \
+    --volume=/tmp/9na8_3ku:/tmp:rw \
+    --volume=/data/tony/RNASeq/tests/ht2_index:/var/lib/cwl/stgc3b9a445-c5ca-4078-be77-d751b02a6400/ht2_index:ro \
+    --volume=/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/fastq/test3.fastq:/var/lib/cwl/stg63fefac3-6b3b-40ba-9cc5-e3906dbd0a8f/test3.fastq:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmpsq6wh21_/20190304130343-589042.cid \
+    quay.io/biocontainers/hisat2:2.1.0--py27h2d50403_2 \
+    /bin/sh \
+    -c \
+    'mkdir' 'test3' && cd 'test3' && hisat2 '-q' '-x' '/var/lib/cwl/stgc3b9a445-c5ca-4078-be77-d751b02a6400/ht2_index/test_index' '-U' '/var/lib/cwl/stg63fefac3-6b3b-40ba-9cc5-e3906dbd0a8f/test3.fastq' '-S' 'test3.sam' '-p' '2' '--dta' '--summary-file' 'log.txt'
+2630 reads; of these:
+  2630 (100.00%) were unpaired; of these:
+    65 (2.47%) aligned 0 times
+    2565 (97.53%) aligned exactly 1 time
+    0 (0.00%) aligned >1 times
+97.53% overall alignment rate
+[2019-03-04 13:03:44] [job hisat2_2] Max memory used: 0MiB
+[2019-03-04 13:03:44] [job hisat2_2] completed success
+[2019-03-04 13:03:44] [step hisat2_2] completed success
+[2019-03-04 13:03:44] [workflow ] starting step star_samtools_4
+[2019-03-04 13:03:44] [step star_samtools_4] start
+[2019-03-04 13:03:44] [job star_samtools_4] /tmp/j_41usxo$ docker \
+    run \
+    -i \
+    --volume=/tmp/j_41usxo:/FxDpvz:rw \
+    --volume=/tmp/aq3ymeur:/tmp:rw \
+    --volume=/tmp/o5xodrmx/test4/test4Aligned.out.sam:/var/lib/cwl/stga95a88ba-2236-4776-ae7c-adb14ce6c814/test4Aligned.out.sam:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmpyan5qmrz/20190304130344-691629.cid \
+    genomicpariscentre/samtools \
+    samtools \
+    sort \
+    '-@' \
+    2 \
+    -o \
+    test4.bam \
+    /var/lib/cwl/stga95a88ba-2236-4776-ae7c-adb14ce6c814/test4Aligned.out.sam
+[2019-03-04 13:03:45] [job star_samtools_4] Max memory used: 0MiB
+[2019-03-04 13:03:45] [job star_samtools_4] completed success
+[2019-03-04 13:03:45] [step star_samtools_4] completed success
+[2019-03-04 13:03:45] [workflow ] starting step star_samtools_stringtie_4
+[2019-03-04 13:03:45] [step star_samtools_stringtie_4] start
+[2019-03-04 13:03:45] [job star_samtools_stringtie_4] /tmp/1lvatb22$ docker \
+    run \
+    -i \
+    --volume=/tmp/1lvatb22:/FxDpvz:rw \
+    --volume=/tmp/1hur8003:/tmp:rw \
+    --volume=/tmp/j_41usxo/test4.bam:/var/lib/cwl/stgb4068cda-ddd3-4152-b1f0-1a0ddd4398f1/test4.bam:ro \
+    --volume=/data/tony/RNASeq/tests/test.gtf:/var/lib/cwl/stg7efa22ff-2938-46c7-9880-d504999317eb/test.gtf:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmpoadjrrbk/20190304130345-800577.cid \
+    quay.io/biocontainers/stringtie:1.3.0--hd28b015_2 \
+    stringtie \
+    -eB \
+    /var/lib/cwl/stgb4068cda-ddd3-4152-b1f0-1a0ddd4398f1/test4.bam \
+    -p \
+    2 \
+    -G \
+    /var/lib/cwl/stg7efa22ff-2938-46c7-9880-d504999317eb/test.gtf \
+    -o \
+    test4.gtf
+[2019-03-04 13:03:46] [job star_samtools_stringtie_4] Max memory used: 0MiB
+[2019-03-04 13:03:46] [job star_samtools_stringtie_4] completed success
+[2019-03-04 13:03:46] [step star_samtools_stringtie_4] completed success
+[2019-03-04 13:03:46] [workflow ] starting step hisat2_samtools_htseq_4
+[2019-03-04 13:03:46] [step hisat2_samtools_htseq_4] start
+[2019-03-04 13:03:46] [job hisat2_samtools_htseq_4] /tmp/p4p41cxd$ docker \
+    run \
+    -i \
+    --volume=/tmp/p4p41cxd:/FxDpvz:rw \
+    --volume=/tmp/os3ryifl:/tmp:rw \
+    --volume=/tmp/w5v6xyvh/test4.bam:/var/lib/cwl/stg57172239-90ea-45d9-8ab2-c581627032a6/test4.bam:ro \
+    --volume=/tmp/4tfsa51r/test.gff:/var/lib/cwl/stgc8a94314-9f18-4d70-845c-300c6a195069/test.gff:ro \
+    --volume=/data/tony/RNASeq/scripts/Basic_DEXSeq_scripts/dexseq_count_modified.py:/var/lib/cwl/stg795d6c80-bfd6-4c44-9e09-1c0d0b75e5f4/dexseq_count_modified.py:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmpw8q0hp6q/20190304130346-897747.cid \
+    genomicpariscentre/htseq:0.11.0 \
+    python \
+    /var/lib/cwl/stg795d6c80-bfd6-4c44-9e09-1c0d0b75e5f4/dexseq_count_modified.py \
+    -p \
+    no \
+    -s \
+    no \
+    -f \
+    bam \
+    -r \
+    pos \
+    /var/lib/cwl/stgc8a94314-9f18-4d70-845c-300c6a195069/test.gff \
+    /var/lib/cwl/stg57172239-90ea-45d9-8ab2-c581627032a6/test4.bam \
+    test4_htseq_count.csv
+[2019-03-04 13:03:47] [job hisat2_samtools_htseq_4] Max memory used: 0MiB
+[2019-03-04 13:03:47] [job hisat2_samtools_htseq_4] completed success
+[2019-03-04 13:03:47] [step hisat2_samtools_htseq_4] completed success
+[2019-03-04 13:03:47] [workflow ] starting step star_samtools_3
+[2019-03-04 13:03:47] [step star_samtools_3] start
+[2019-03-04 13:03:47] [job star_samtools_3] /tmp/6giam2p6$ docker \
+    run \
+    -i \
+    --volume=/tmp/6giam2p6:/FxDpvz:rw \
+    --volume=/tmp/9qv62oow:/tmp:rw \
+    --volume=/tmp/nwb3_u7z/test2/test2Aligned.out.sam:/var/lib/cwl/stg45fbb514-c51d-43c0-b8ce-1ed0b26877b6/test2Aligned.out.sam:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmp6j1idk_n/20190304130347-984702.cid \
+    genomicpariscentre/samtools \
+    samtools \
+    sort \
+    '-@' \
+    2 \
+    -o \
+    test2.bam \
+    /var/lib/cwl/stg45fbb514-c51d-43c0-b8ce-1ed0b26877b6/test2Aligned.out.sam
+[2019-03-04 13:03:49] [job star_samtools_3] Max memory used: 0MiB
+[2019-03-04 13:03:49] [job star_samtools_3] completed success
+[2019-03-04 13:03:49] [step star_samtools_3] completed success
+[2019-03-04 13:03:49] [workflow ] starting step star_folder
+[2019-03-04 13:03:49] [step star_folder] start
+[2019-03-04 13:03:49] [step star_folder] completed success
+[2019-03-04 13:03:49] [workflow ] starting step hisat2_samtools_1
+[2019-03-04 13:03:49] [step hisat2_samtools_1] start
+[2019-03-04 13:03:49] [job hisat2_samtools_1] /tmp/gd8pfeld$ docker \
+    run \
+    -i \
+    --volume=/tmp/gd8pfeld:/FxDpvz:rw \
+    --volume=/tmp/vxzo4iny:/tmp:rw \
+    --volume=/tmp/fqdm2hn6/test1/test1.sam:/var/lib/cwl/stg804ecef9-8213-49ae-a725-737423e8d2a1/test1.sam:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmp03zrjyhu/20190304130349-099010.cid \
+    genomicpariscentre/samtools \
+    samtools \
+    sort \
+    '-@' \
+    2 \
+    -o \
+    test1.bam \
+    /var/lib/cwl/stg804ecef9-8213-49ae-a725-737423e8d2a1/test1.sam
+[2019-03-04 13:03:50] [job hisat2_samtools_1] Max memory used: 0MiB
+[2019-03-04 13:03:50] [job hisat2_samtools_1] completed success
+[2019-03-04 13:03:50] [step hisat2_samtools_1] completed success
+[2019-03-04 13:03:50] [workflow ] starting step hisat2_folder
+[2019-03-04 13:03:50] [step hisat2_folder] start
+[2019-03-04 13:03:50] [step hisat2_folder] completed success
+[2019-03-04 13:03:50] [workflow ] starting step star_samtools_stringtie_2
+[2019-03-04 13:03:50] [step star_samtools_stringtie_2] start
+[2019-03-04 13:03:50] [job star_samtools_stringtie_2] /tmp/ajw4sb3j$ docker \
+    run \
+    -i \
+    --volume=/tmp/ajw4sb3j:/FxDpvz:rw \
+    --volume=/tmp/p0l3_63e:/tmp:rw \
+    --volume=/tmp/cihx1xqg/test3.bam:/var/lib/cwl/stg4d76bb20-25c7-4812-b425-841131f049f0/test3.bam:ro \
+    --volume=/data/tony/RNASeq/tests/test.gtf:/var/lib/cwl/stgdf118427-dc6c-4ea2-bb9f-496037198365/test.gtf:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmp_xa5we2v/20190304130350-193930.cid \
+    quay.io/biocontainers/stringtie:1.3.0--hd28b015_2 \
+    stringtie \
+    -eB \
+    /var/lib/cwl/stg4d76bb20-25c7-4812-b425-841131f049f0/test3.bam \
+    -p \
+    2 \
+    -G \
+    /var/lib/cwl/stgdf118427-dc6c-4ea2-bb9f-496037198365/test.gtf \
+    -o \
+    test3.gtf
+[2019-03-04 13:03:51] [job star_samtools_stringtie_2] Max memory used: 0MiB
+[2019-03-04 13:03:51] [job star_samtools_stringtie_2] completed success
+[2019-03-04 13:03:51] [step star_samtools_stringtie_2] completed success
+[2019-03-04 13:03:51] [workflow ] starting step hisat2_samtools_2
+[2019-03-04 13:03:51] [step hisat2_samtools_2] start
+[2019-03-04 13:03:51] [job hisat2_samtools_2] /tmp/1cxd_7kf$ docker \
+    run \
+    -i \
+    --volume=/tmp/1cxd_7kf:/FxDpvz:rw \
+    --volume=/tmp/bh82wyt9:/tmp:rw \
+    --volume=/tmp/c9vdjlvw/test3/test3.sam:/var/lib/cwl/stg68b89296-be71-4d05-8f9f-e225524d130a/test3.sam:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmpltz28kya/20190304130351-302118.cid \
+    genomicpariscentre/samtools \
+    samtools \
+    sort \
+    '-@' \
+    2 \
+    -o \
+    test3.bam \
+    /var/lib/cwl/stg68b89296-be71-4d05-8f9f-e225524d130a/test3.sam
+[2019-03-04 13:03:52] [job hisat2_samtools_2] Max memory used: 0MiB
+[2019-03-04 13:03:52] [job hisat2_samtools_2] completed success
+[2019-03-04 13:03:52] [step hisat2_samtools_2] completed success
+[2019-03-04 13:03:52] [workflow ] starting step hisat2_samtools_folder
+[2019-03-04 13:03:52] [step hisat2_samtools_folder] start
+[2019-03-04 13:03:52] [step hisat2_samtools_folder] completed success
+[2019-03-04 13:03:52] [workflow ] starting step hisat2_samtools_stringtie_1
+[2019-03-04 13:03:52] [step hisat2_samtools_stringtie_1] start
+[2019-03-04 13:03:52] [job hisat2_samtools_stringtie_1] /tmp/7ns_0ez1$ docker \
+    run \
+    -i \
+    --volume=/tmp/7ns_0ez1:/FxDpvz:rw \
+    --volume=/tmp/oiog6cfm:/tmp:rw \
+    --volume=/tmp/gd8pfeld/test1.bam:/var/lib/cwl/stg7ca57af8-e6a3-4fa0-9bbc-f696be7e9350/test1.bam:ro \
+    --volume=/data/tony/RNASeq/tests/test.gtf:/var/lib/cwl/stga37f65ae-eb36-45d3-9179-08c0745e2def/test.gtf:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmpu09upbgf/20190304130352-402670.cid \
+    quay.io/biocontainers/stringtie:1.3.0--hd28b015_2 \
+    stringtie \
+    -eB \
+    /var/lib/cwl/stg7ca57af8-e6a3-4fa0-9bbc-f696be7e9350/test1.bam \
+    -p \
+    2 \
+    -G \
+    /var/lib/cwl/stga37f65ae-eb36-45d3-9179-08c0745e2def/test.gtf \
+    -o \
+    test1.gtf
+[2019-03-04 13:03:53] [job hisat2_samtools_stringtie_1] Max memory used: 0MiB
+[2019-03-04 13:03:53] [job hisat2_samtools_stringtie_1] completed success
+[2019-03-04 13:03:53] [step hisat2_samtools_stringtie_1] completed success
+[2019-03-04 13:03:53] [workflow ] starting step star_samtools_stringtie_3
+[2019-03-04 13:03:53] [step star_samtools_stringtie_3] start
+[2019-03-04 13:03:53] [job star_samtools_stringtie_3] /tmp/s66vpnv7$ docker \
+    run \
+    -i \
+    --volume=/tmp/s66vpnv7:/FxDpvz:rw \
+    --volume=/tmp/tdatuiy7:/tmp:rw \
+    --volume=/tmp/6giam2p6/test2.bam:/var/lib/cwl/stgfa6dbde8-1554-4a1a-b004-3955f58cfe40/test2.bam:ro \
+    --volume=/data/tony/RNASeq/tests/test.gtf:/var/lib/cwl/stg3dfb3289-8437-4313-82d9-51ae915f74f0/test.gtf:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmpk7quig59/20190304130353-511134.cid \
+    quay.io/biocontainers/stringtie:1.3.0--hd28b015_2 \
+    stringtie \
+    -eB \
+    /var/lib/cwl/stgfa6dbde8-1554-4a1a-b004-3955f58cfe40/test2.bam \
+    -p \
+    2 \
+    -G \
+    /var/lib/cwl/stg3dfb3289-8437-4313-82d9-51ae915f74f0/test.gtf \
+    -o \
+    test2.gtf
+[2019-03-04 13:03:54] [job star_samtools_stringtie_3] Max memory used: 0MiB
+[2019-03-04 13:03:54] [job star_samtools_stringtie_3] completed success
+[2019-03-04 13:03:54] [step star_samtools_stringtie_3] completed success
+[2019-03-04 13:03:54] [workflow ] starting step star_samtools_folder
+[2019-03-04 13:03:54] [step star_samtools_folder] start
+[2019-03-04 13:03:54] [step star_samtools_folder] completed success
+[2019-03-04 13:03:54] [workflow ] starting step star_samtools_stringtie_prepde
+[2019-03-04 13:03:54] [step star_samtools_stringtie_prepde] start
+[2019-03-04 13:03:54] [job star_samtools_stringtie_prepde] /tmp/io65j3td$ docker \
+    run \
+    -i \
+    --volume=/tmp/io65j3td:/FxDpvz:rw \
+    --volume=/tmp/7be6_4sr:/tmp:rw \
+    --volume=/data/tony/RNASeq/scripts/prepDE.py:/var/lib/cwl/stg992d701a-c7e6-45b9-ba18-b6dd1793e046/prepDE.py:ro \
+    --volume=/tmp/ypowmbvv/test1.gtf:/var/lib/cwl/stg1ccef12a-0d3f-49fa-9cfd-1a00e81afc67/test1.gtf:ro \
+    --volume=/tmp/ajw4sb3j/test3.gtf:/var/lib/cwl/stg5cadd10b-16f2-46e7-aef8-5daa062b3b1e/test3.gtf:ro \
+    --volume=/tmp/s66vpnv7/test2.gtf:/var/lib/cwl/stgea931677-9de3-4430-a4fc-a1af78cf2483/test2.gtf:ro \
+    --volume=/tmp/1lvatb22/test4.gtf:/var/lib/cwl/stg5a997c18-f835-447b-8a0a-1f603cde5ad8/test4.gtf:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmp9h4hb8th/20190304130354-695324.cid \
+    python:2.7.15-slim \
+    /bin/sh \
+    -c \
+    'python2' '-c' 'import json
+with open("inputs.json") as file:
+    inputs = json.load(file)
+with open("sample_lst.txt", "w") as txt:
+    for i in range(len(inputs["inputs"])):
+        txt.write(inputs["inputs"][i]["nameroot"]
+                  + " "
+                  + inputs["inputs"][i]["path"]
+                  + "\n")
+' && 'python2' '/var/lib/cwl/stg992d701a-c7e6-45b9-ba18-b6dd1793e046/prepDE.py' '-i' 'sample_lst.txt'
+0 test1
+1 test2
+2 test3
+3 test4
+[2019-03-04 13:03:55] [job star_samtools_stringtie_prepde] Max memory used: 0MiB
+[2019-03-04 13:03:55] [job star_samtools_stringtie_prepde] completed success
+[2019-03-04 13:03:55] [step star_samtools_stringtie_prepde] completed success
+[2019-03-04 13:03:55] [workflow ] starting step hisat2_samtools_stringtie_2
+[2019-03-04 13:03:55] [step hisat2_samtools_stringtie_2] start
+[2019-03-04 13:03:55] [job hisat2_samtools_stringtie_2] /tmp/bjbtsud7$ docker \
+    run \
+    -i \
+    --volume=/tmp/bjbtsud7:/FxDpvz:rw \
+    --volume=/tmp/u18y_6r_:/tmp:rw \
+    --volume=/tmp/1cxd_7kf/test3.bam:/var/lib/cwl/stg2c330c22-8504-4390-8c71-7c664f86479e/test3.bam:ro \
+    --volume=/data/tony/RNASeq/tests/test.gtf:/var/lib/cwl/stgcb3908da-a4d9-4651-8965-ee5999e1ea25/test.gtf:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmpmfctp50t/20190304130355-800713.cid \
+    quay.io/biocontainers/stringtie:1.3.0--hd28b015_2 \
+    stringtie \
+    -eB \
+    /var/lib/cwl/stg2c330c22-8504-4390-8c71-7c664f86479e/test3.bam \
+    -p \
+    2 \
+    -G \
+    /var/lib/cwl/stgcb3908da-a4d9-4651-8965-ee5999e1ea25/test.gtf \
+    -o \
+    test3.gtf
+[2019-03-04 13:03:56] [job hisat2_samtools_stringtie_2] Max memory used: 0MiB
+[2019-03-04 13:03:56] [job hisat2_samtools_stringtie_2] completed success
+[2019-03-04 13:03:56] [step hisat2_samtools_stringtie_2] completed success
+[2019-03-04 13:03:56] [workflow ] starting step hisat2_samtools_stringtie_prepde
+[2019-03-04 13:03:56] [step hisat2_samtools_stringtie_prepde] start
+[2019-03-04 13:03:56] [job hisat2_samtools_stringtie_prepde] /tmp/ak1brfu8$ docker \
+    run \
+    -i \
+    --volume=/tmp/ak1brfu8:/FxDpvz:rw \
+    --volume=/tmp/p_77bwo1:/tmp:rw \
+    --volume=/data/tony/RNASeq/scripts/prepDE.py:/var/lib/cwl/stgda18d326-2f79-496f-b9c9-6a1c7f54f9b2/prepDE.py:ro \
+    --volume=/tmp/7ns_0ez1/test1.gtf:/var/lib/cwl/stg8066e99a-b805-42eb-ac8a-7050b6ce91a1/test1.gtf:ro \
+    --volume=/tmp/bjbtsud7/test3.gtf:/var/lib/cwl/stgbc62d431-30e9-4ff6-b386-02fb89ad5e50/test3.gtf:ro \
+    --volume=/tmp/9lerzuep/test2.gtf:/var/lib/cwl/stg2f2362f7-74b9-43cd-8aab-aec2ae267b9e/test2.gtf:ro \
+    --volume=/tmp/ipk7jysn/test4.gtf:/var/lib/cwl/stg169e97b6-e236-464a-bafd-4fa2b852654c/test4.gtf:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmpc3pua1e8/20190304130356-910443.cid \
+    python:2.7.15-slim \
+    /bin/sh \
+    -c \
+    'python2' '-c' 'import json
+with open("inputs.json") as file:
+    inputs = json.load(file)
+with open("sample_lst.txt", "w") as txt:
+    for i in range(len(inputs["inputs"])):
+        txt.write(inputs["inputs"][i]["nameroot"]
+                  + " "
+                  + inputs["inputs"][i]["path"]
+                  + "\n")
+' && 'python2' '/var/lib/cwl/stgda18d326-2f79-496f-b9c9-6a1c7f54f9b2/prepDE.py' '-i' 'sample_lst.txt'
+0 test1
+1 test2
+2 test3
+3 test4
+[2019-03-04 13:03:57] [job hisat2_samtools_stringtie_prepde] Max memory used: 0MiB
+[2019-03-04 13:03:57] [job hisat2_samtools_stringtie_prepde] completed success
+[2019-03-04 13:03:57] [step hisat2_samtools_stringtie_prepde] completed success
+[2019-03-04 13:03:57] [workflow ] starting step hisat2_samtools_htseq_1
+[2019-03-04 13:03:57] [step hisat2_samtools_htseq_1] start
+[2019-03-04 13:03:58] [job hisat2_samtools_htseq_1] /tmp/qytopb3a$ docker \
+    run \
+    -i \
+    --volume=/tmp/qytopb3a:/FxDpvz:rw \
+    --volume=/tmp/v47s5vwf:/tmp:rw \
+    --volume=/tmp/gd8pfeld/test1.bam:/var/lib/cwl/stg5bc73d09-e350-45fd-a988-67eadce94397/test1.bam:ro \
+    --volume=/tmp/4tfsa51r/test.gff:/var/lib/cwl/stgc1d3a4dc-8083-45cc-918c-98449b5031f6/test.gff:ro \
+    --volume=/data/tony/RNASeq/scripts/Basic_DEXSeq_scripts/dexseq_count_modified.py:/var/lib/cwl/stg8d34b913-5971-48af-bc9a-631f4ae1a8fc/dexseq_count_modified.py:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmpgpe7hmzv/20190304130358-021619.cid \
+    genomicpariscentre/htseq:0.11.0 \
+    python \
+    /var/lib/cwl/stg8d34b913-5971-48af-bc9a-631f4ae1a8fc/dexseq_count_modified.py \
+    -p \
+    yes \
+    -s \
+    no \
+    -f \
+    bam \
+    -r \
+    pos \
+    /var/lib/cwl/stgc1d3a4dc-8083-45cc-918c-98449b5031f6/test.gff \
+    /var/lib/cwl/stg5bc73d09-e350-45fd-a988-67eadce94397/test1.bam \
+    test1_htseq_count.csv
+[2019-03-04 13:03:59] [job hisat2_samtools_htseq_1] Max memory used: 0MiB
+[2019-03-04 13:03:59] [job hisat2_samtools_htseq_1] completed success
+[2019-03-04 13:03:59] [step hisat2_samtools_htseq_1] completed success
+[2019-03-04 13:03:59] [workflow ] starting step star_samtools_stringtie_folder
+[2019-03-04 13:03:59] [step star_samtools_stringtie_folder] start
+[2019-03-04 13:03:59] [step star_samtools_stringtie_folder] completed success
+[2019-03-04 13:03:59] [workflow ] starting step star_samtools_stringtie_prepde_deseq2
+[2019-03-04 13:03:59] [step star_samtools_stringtie_prepde_deseq2] start
+[2019-03-04 13:03:59] [job star_samtools_stringtie_prepde_deseq2] /tmp/9ynoap36$ docker \
+    run \
+    -i \
+    --volume=/tmp/9ynoap36:/FxDpvz:rw \
+    --volume=/tmp/fbdzu5kh:/tmp:rw \
+    --volume=/tmp/io65j3td/gene_count_matrix.csv:/var/lib/cwl/stg02d367a2-ec3a-4dd1-91ea-06e21daa5934/gene_count_matrix.csv:ro \
+    --volume=/data/tony/RNASeq/scripts/Basic_DESeq2.R:/var/lib/cwl/stg74da392f-2f54-4396-a030-d1e4e51ed122/Basic_DESeq2.R:ro \
+    --volume=/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/metadata.csv:/var/lib/cwl/stgdf4bc37d-498a-48b9-b64d-172a44e559c1/metadata.csv:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmpeee4p4pe/20190304130359-279520.cid \
+    biowardrobe2/scidap-deseq:v0.0.5 \
+    Rscript \
+    /var/lib/cwl/stg74da392f-2f54-4396-a030-d1e4e51ed122/Basic_DESeq2.R \
+    --count_matrix \
+    /var/lib/cwl/stg02d367a2-ec3a-4dd1-91ea-06e21daa5934/gene_count_matrix.csv \
+    --metadata \
+    /var/lib/cwl/stgdf4bc37d-498a-48b9-b64d-172a44e559c1/metadata.csv
+Warning message:
+replacing previous import by 'RSQLite::Id' when loading 'AnnotationDbi' 
+estimating size factors
+estimating dispersions
+gene-wise dispersion estimates
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+[2019-03-04 13:04:09] [job star_samtools_stringtie_prepde_deseq2] Max memory used: 25744MiB
+[2019-03-04 13:04:09] [job star_samtools_stringtie_prepde_deseq2] completed success
+[2019-03-04 13:04:09] [step star_samtools_stringtie_prepde_deseq2] completed success
+[2019-03-04 13:04:09] [workflow ] starting step hisat2_samtools_htseq_2
+[2019-03-04 13:04:09] [step hisat2_samtools_htseq_2] start
+[2019-03-04 13:04:09] [job hisat2_samtools_htseq_2] /tmp/e1r62zdi$ docker \
+    run \
+    -i \
+    --volume=/tmp/e1r62zdi:/FxDpvz:rw \
+    --volume=/tmp/klpxlh6p:/tmp:rw \
+    --volume=/tmp/1cxd_7kf/test3.bam:/var/lib/cwl/stg8d361fa7-0ee2-4180-9788-d1f2988e8d65/test3.bam:ro \
+    --volume=/tmp/4tfsa51r/test.gff:/var/lib/cwl/stg34399d63-ad85-4bab-9738-bd3539269695/test.gff:ro \
+    --volume=/data/tony/RNASeq/scripts/Basic_DEXSeq_scripts/dexseq_count_modified.py:/var/lib/cwl/stga332ea15-e7e0-4f63-bf0a-2c90ff57bc57/dexseq_count_modified.py:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmp55ktgy4u/20190304130409-084487.cid \
+    genomicpariscentre/htseq:0.11.0 \
+    python \
+    /var/lib/cwl/stga332ea15-e7e0-4f63-bf0a-2c90ff57bc57/dexseq_count_modified.py \
+    -p \
+    no \
+    -s \
+    no \
+    -f \
+    bam \
+    -r \
+    pos \
+    /var/lib/cwl/stg34399d63-ad85-4bab-9738-bd3539269695/test.gff \
+    /var/lib/cwl/stg8d361fa7-0ee2-4180-9788-d1f2988e8d65/test3.bam \
+    test3_htseq_count.csv
+[2019-03-04 13:04:10] [job hisat2_samtools_htseq_2] Max memory used: 0MiB
+[2019-03-04 13:04:10] [job hisat2_samtools_htseq_2] completed success
+[2019-03-04 13:04:10] [step hisat2_samtools_htseq_2] completed success
+[2019-03-04 13:04:10] [workflow ] starting step hisat2_samtools_stringtie_prepde_deseq2
+[2019-03-04 13:04:10] [step hisat2_samtools_stringtie_prepde_deseq2] start
+[2019-03-04 13:04:10] [job hisat2_samtools_stringtie_prepde_deseq2] /tmp/vvj7bppy$ docker \
+    run \
+    -i \
+    --volume=/tmp/vvj7bppy:/FxDpvz:rw \
+    --volume=/tmp/qayea3t_:/tmp:rw \
+    --volume=/tmp/ak1brfu8/gene_count_matrix.csv:/var/lib/cwl/stg4579fadf-2e34-476e-9103-49978107f9d3/gene_count_matrix.csv:ro \
+    --volume=/data/tony/RNASeq/scripts/Basic_DESeq2.R:/var/lib/cwl/stge9e4ef1b-5de7-46ca-9d9f-a2c5acc8d26f/Basic_DESeq2.R:ro \
+    --volume=/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/metadata.csv:/var/lib/cwl/stge0c0a630-104c-4a4b-822d-4895385c85ae/metadata.csv:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmpsh3c677e/20190304130410-200425.cid \
+    biowardrobe2/scidap-deseq:v0.0.5 \
+    Rscript \
+    /var/lib/cwl/stge9e4ef1b-5de7-46ca-9d9f-a2c5acc8d26f/Basic_DESeq2.R \
+    --count_matrix \
+    /var/lib/cwl/stg4579fadf-2e34-476e-9103-49978107f9d3/gene_count_matrix.csv \
+    --metadata \
+    /var/lib/cwl/stge0c0a630-104c-4a4b-822d-4895385c85ae/metadata.csv
+Warning message:
+replacing previous import by 'RSQLite::Id' when loading 'AnnotationDbi' 
+estimating size factors
+estimating dispersions
+gene-wise dispersion estimates
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+[2019-03-04 13:04:19] [job hisat2_samtools_stringtie_prepde_deseq2] Max memory used: 25744MiB
+[2019-03-04 13:04:19] [job hisat2_samtools_stringtie_prepde_deseq2] completed success
+[2019-03-04 13:04:19] [step hisat2_samtools_stringtie_prepde_deseq2] completed success
+[2019-03-04 13:04:19] [workflow ] starting step prepde_folder
+[2019-03-04 13:04:19] [step prepde_folder] start
+[2019-03-04 13:04:19] [step prepde_folder] completed success
+[2019-03-04 13:04:19] [workflow ] starting step hisat2_samtools_stringtie_folder
+[2019-03-04 13:04:19] [step hisat2_samtools_stringtie_folder] start
+[2019-03-04 13:04:19] [step hisat2_samtools_stringtie_folder] completed success
+[2019-03-04 13:04:19] [workflow ] starting step star_samtools_stringtie_prepde_deseq2_folder
+[2019-03-04 13:04:19] [step star_samtools_stringtie_prepde_deseq2_folder] start
+[2019-03-04 13:04:19] [step star_samtools_stringtie_prepde_deseq2_folder] completed success
+[2019-03-04 13:04:19] [workflow ] starting step hisat2_samtools_stringtie_prepde_deseq2_folder
+[2019-03-04 13:04:19] [step hisat2_samtools_stringtie_prepde_deseq2_folder] start
+[2019-03-04 13:04:19] [step hisat2_samtools_stringtie_prepde_deseq2_folder] completed success
+[2019-03-04 13:04:19] [workflow ] starting step hisat2_samtools_htseq_folder
+[2019-03-04 13:04:19] [step hisat2_samtools_htseq_folder] start
+[2019-03-04 13:04:19] [step hisat2_samtools_htseq_folder] completed success
+[2019-03-04 13:04:19] [workflow ] starting step hisat2_samtools_htseq_dexseq
+[2019-03-04 13:04:19] [step hisat2_samtools_htseq_dexseq] start
+[2019-03-04 13:04:20] [job hisat2_samtools_htseq_dexseq] /tmp/8rjpneyq$ docker \
+    run \
+    -i \
+    --volume=/tmp/8rjpneyq:/FxDpvz:rw \
+    --volume=/tmp/njigdarl:/tmp:rw \
+    --volume=/tmp/qytopb3a/test1_htseq_count.csv:/var/lib/cwl/stgfedc925e-2b1f-409f-8c94-05d85eb8c34b/hisat2_samtools_htseq/test1_htseq_count.csv:ro \
+    --volume=/tmp/e1r62zdi/test3_htseq_count.csv:/var/lib/cwl/stgfedc925e-2b1f-409f-8c94-05d85eb8c34b/hisat2_samtools_htseq/test3_htseq_count.csv:ro \
+    --volume=/tmp/_74n1s9r/test2_htseq_count.csv:/var/lib/cwl/stgfedc925e-2b1f-409f-8c94-05d85eb8c34b/hisat2_samtools_htseq/test2_htseq_count.csv:ro \
+    --volume=/tmp/p4p41cxd/test4_htseq_count.csv:/var/lib/cwl/stgfedc925e-2b1f-409f-8c94-05d85eb8c34b/hisat2_samtools_htseq/test4_htseq_count.csv:ro \
+    --volume=/tmp/4tfsa51r/test.gff:/var/lib/cwl/stgc5963d97-2308-4bef-b45a-92849e3deae6/htseq_prepare/test.gff:ro \
+    --volume=/data/tony/RNASeq/scripts/Basic_DEXSeq_scripts/DEXSeq.R:/var/lib/cwl/stg894f7145-d3da-4367-9b0f-17ed51b1c83c/DEXSeq.R:ro \
+    --volume=/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/metadata.csv:/var/lib/cwl/stga0d28bc2-e296-49a6-87bd-a138f378dfdf/metadata.csv:ro \
+    --workdir=/FxDpvz \
+    --read-only=true \
+    --user=201808:700 \
+    --rm \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/FxDpvz \
+    --cidfile=/tmp/tmpimhhcqlx/20190304130420-066921.cid \
+    machalen/dexseq \
+    Rscript \
+    /var/lib/cwl/stg894f7145-d3da-4367-9b0f-17ed51b1c83c/DEXSeq.R \
+    --count_matrix_dir \
+    /var/lib/cwl/stgfedc925e-2b1f-409f-8c94-05d85eb8c34b/hisat2_samtools_htseq \
+    --gff_file_dir \
+    /var/lib/cwl/stgc5963d97-2308-4bef-b45a-92849e3deae6/htseq_prepare \
+    --metadata \
+    /var/lib/cwl/stga0d28bc2-e296-49a6-87bd-a138f378dfdf/metadata.csv
+converting counts to integer mode
+Note: method with signature ‘RangedSummarizedExperiment#DataFrame’ chosen for function ‘colData<-’,
+ target signature ‘DEXSeqDataSet#DataFrame’.
+ "SummarizedExperiment#DataFrame" would also be valid
+using supplied model matrix
+-- note: fitType='parametric', but the dispersion trend was not well captured by the
+   function: y = a/x + b, and a local regression fit was automatically substituted.
+   specify fitType='local' or 'mean' to avoid this message next time.
+using supplied model matrix
+using supplied model matrix
+Warning messages:
+1: In lfproc(x, y, weights = weights, cens = cens, base = base, geth = geth,  :
+  Estimated rdf < 1.0; not estimating variance
+2: In vst(exp(alleffects), object) :
+  Dispersion function not parametric, applying log2(x+ 1) instead of vst...
+
+[2019-03-04 13:04:33] [job hisat2_samtools_htseq_dexseq] Max memory used: 36678MiB
+[2019-03-04 13:04:33] [job hisat2_samtools_htseq_dexseq] completed success
+[2019-03-04 13:04:33] [step hisat2_samtools_htseq_dexseq] completed success
+[2019-03-04 13:04:33] [workflow ] starting step hisat2_samtools_htseq_dexseq_folder
+[2019-03-04 13:04:33] [step hisat2_samtools_htseq_dexseq_folder] start
+[2019-03-04 13:04:33] [step hisat2_samtools_htseq_dexseq_folder] completed success
+[2019-03-04 13:04:33] [workflow ] completed success
+{
+    "hisat2_out": {
+        "class": "Directory",
+        "basename": "hisat2",
+        "listing": [
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2/test1",
+                "basename": "test1",
+                "class": "Directory",
+                "listing": [
+                    {
+                        "class": "File",
+                        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2/test1/test1.sam",
+                        "basename": "test1.sam",
+                        "size": 1360214,
+                        "checksum": "sha1$c01c7e6bced18e7253b196bf366b910e46dca497",
+                        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2/test1/test1.sam"
+                    },
+                    {
+                        "class": "File",
+                        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2/test1/log.txt",
+                        "basename": "log.txt",
+                        "size": 582,
+                        "checksum": "sha1$9d666ad95754102428b939b59679eb851516b912",
+                        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2/test1/log.txt"
+                    }
+                ],
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2/test1"
+            },
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2/test3",
+                "basename": "test3",
+                "class": "Directory",
+                "listing": [
+                    {
+                        "class": "File",
+                        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2/test3/test3.sam",
+                        "basename": "test3.sam",
+                        "size": 810076,
+                        "checksum": "sha1$a9293af1e3dfccf94e168292f76a841e44c4eb00",
+                        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2/test3/test3.sam"
+                    },
+                    {
+                        "class": "File",
+                        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2/test3/log.txt",
+                        "basename": "log.txt",
+                        "size": 197,
+                        "checksum": "sha1$f6a97f024fce62724f9ee73e1b26ac0cb48b004c",
+                        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2/test3/log.txt"
+                    }
+                ],
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2/test3"
+            },
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2/test2",
+                "basename": "test2",
+                "class": "Directory",
+                "listing": [
+                    {
+                        "class": "File",
+                        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2/test2/test2.sam",
+                        "basename": "test2.sam",
+                        "size": 331607,
+                        "checksum": "sha1$6a80e5ec9d61846ba32a8d61832400fb2df622e7",
+                        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2/test2/test2.sam"
+                    },
+                    {
+                        "class": "File",
+                        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2/test2/log.txt",
+                        "basename": "log.txt",
+                        "size": 573,
+                        "checksum": "sha1$c3dbed13631704fbdd2b63dce2151515ff996c27",
+                        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2/test2/log.txt"
+                    }
+                ],
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2/test2"
+            },
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2/test4",
+                "basename": "test4",
+                "class": "Directory",
+                "listing": [
+                    {
+                        "class": "File",
+                        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2/test4/test4.sam",
+                        "basename": "test4.sam",
+                        "size": 180205,
+                        "checksum": "sha1$6c9eadc0ccd480939c4badb8f35b9b8389a569e8",
+                        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2/test4/test4.sam"
+                    },
+                    {
+                        "class": "File",
+                        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2/test4/log.txt",
+                        "basename": "log.txt",
+                        "size": 194,
+                        "checksum": "sha1$eb33fd08f02ccdd5ecf4d5ee9a89bd88690fc190",
+                        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2/test4/log.txt"
+                    }
+                ],
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2/test4"
+            }
+        ],
+        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2",
+        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2"
+    },
+    "hisat2_samtools_htseq_dexseq_out": {
+        "class": "Directory",
+        "basename": "hisat2_samtools_htseq_dexseq",
+        "listing": [
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools_htseq_dexseq/DEE_results.csv",
+                "basename": "DEE_results.csv",
+                "class": "File",
+                "checksum": "sha1$b80d6720a1bc7cc7b6ebbe09a2eae6fa2caebcb8",
+                "size": 1331,
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools_htseq_dexseq/DEE_results.csv"
+            }
+        ],
+        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools_htseq_dexseq",
+        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools_htseq_dexseq"
+    },
+    "hisat2_samtools_htseq_out": {
+        "class": "Directory",
+        "basename": "hisat2_samtools_htseq",
+        "listing": [
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools_htseq/test1_htseq_count.csv",
+                "basename": "test1_htseq_count.csv",
+                "class": "File",
+                "checksum": "sha1$196782c3eec7f2765e49dc4d367a0c61cd384a60",
+                "size": 148,
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools_htseq/test1_htseq_count.csv"
+            },
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools_htseq/test3_htseq_count.csv",
+                "basename": "test3_htseq_count.csv",
+                "class": "File",
+                "checksum": "sha1$dfa76a8784581a15443ce89e7f33b84ba8032049",
+                "size": 148,
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools_htseq/test3_htseq_count.csv"
+            },
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools_htseq/test2_htseq_count.csv",
+                "basename": "test2_htseq_count.csv",
+                "class": "File",
+                "checksum": "sha1$13cd4c0efb49d6a928961df308c1852e90328525",
+                "size": 145,
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools_htseq/test2_htseq_count.csv"
+            },
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools_htseq/test4_htseq_count.csv",
+                "basename": "test4_htseq_count.csv",
+                "class": "File",
+                "checksum": "sha1$3222b85362251670b9e5fb9284eae8fe5b500348",
+                "size": 146,
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools_htseq/test4_htseq_count.csv"
+            }
+        ],
+        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools_htseq",
+        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools_htseq"
+    },
+    "hisat2_samtools_out": {
+        "class": "Directory",
+        "basename": "hisat2_samtools",
+        "listing": [
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools/test1.bam",
+                "basename": "test1.bam",
+                "class": "File",
+                "checksum": "sha1$147809f31a4fc07310b6a1a2c1f671f077e0de85",
+                "size": 332431,
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools/test1.bam"
+            },
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools/test3.bam",
+                "basename": "test3.bam",
+                "class": "File",
+                "checksum": "sha1$6e9a5821b6965e0c6cdc787b9cb3620b091d2af9",
+                "size": 198674,
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools/test3.bam"
+            },
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools/test2.bam",
+                "basename": "test2.bam",
+                "class": "File",
+                "checksum": "sha1$62da2818ea7f0b7fb2f7427063aaab5d51c13dfe",
+                "size": 82821,
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools/test2.bam"
+            },
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools/test4.bam",
+                "basename": "test4.bam",
+                "class": "File",
+                "checksum": "sha1$db45da64e72e38c001436e0a80ebe8bc7ed9d487",
+                "size": 46686,
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools/test4.bam"
+            }
+        ],
+        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools",
+        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools"
+    },
+    "hisat2_samtools_stringtie_out": {
+        "class": "Directory",
+        "basename": "hisat2_samtools_stringtie",
+        "listing": [
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools_stringtie/test1.gtf",
+                "basename": "test1.gtf",
+                "class": "File",
+                "checksum": "sha1$66154b3e18b2ad355c4138b3f0e00fd25b067609",
+                "size": 1427,
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools_stringtie/test1.gtf"
+            },
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools_stringtie/test3.gtf",
+                "basename": "test3.gtf",
+                "class": "File",
+                "checksum": "sha1$b2c60406ebda62201cc9e02be0db3d84e6134c50",
+                "size": 1424,
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools_stringtie/test3.gtf"
+            },
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools_stringtie/test2.gtf",
+                "basename": "test2.gtf",
+                "class": "File",
+                "checksum": "sha1$f19c081517b74773ab3e13e49bf3292313ae3c25",
+                "size": 1425,
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools_stringtie/test2.gtf"
+            },
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools_stringtie/test4.gtf",
+                "basename": "test4.gtf",
+                "class": "File",
+                "checksum": "sha1$5ef948c5c8fd38b79d5ddf85925400205032d215",
+                "size": 1427,
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools_stringtie/test4.gtf"
+            }
+        ],
+        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools_stringtie",
+        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools_stringtie"
+    },
+    "hisat2_samtools_stringtie_prepde_deseq2_out": {
+        "class": "Directory",
+        "basename": "hisat2_samtools_stringtie_prepde_deseq2",
+        "listing": [
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools_stringtie_prepde_deseq2/groupNormal-groupTumour_DGE_results.csv",
+                "basename": "groupNormal-groupTumour_DGE_results.csv",
+                "class": "File",
+                "checksum": "sha1$f93ee6c1eaef3269dc1e5952db838e1cc0d236b4",
+                "size": 302,
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools_stringtie_prepde_deseq2/groupNormal-groupTumour_DGE_results.csv"
+            }
+        ],
+        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools_stringtie_prepde_deseq2",
+        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/hisat2_samtools_stringtie_prepde_deseq2"
+    },
+    "htseq_prepare_out": {
+        "class": "Directory",
+        "basename": "htseq_prepare",
+        "listing": [
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/htseq_prepare/test.gff",
+                "basename": "test.gff",
+                "class": "File",
+                "checksum": "sha1$7a4e1ca28cf0fb8b542b86e42daa5ecae4b4cfba",
+                "size": 732,
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/htseq_prepare/test.gff"
+            }
+        ],
+        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/htseq_prepare",
+        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/htseq_prepare"
+    },
+    "prepde_out": {
+        "class": "Directory",
+        "basename": "star_samtools_stringtie_prepde",
+        "listing": [
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star_samtools_stringtie_prepde/gene_count_matrix.csv",
+                "basename": "gene_count_matrix.csv",
+                "class": "File",
+                "checksum": "sha1$87ed2c6ba29382aa783cd920e620ceea504161d0",
+                "size": 81,
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star_samtools_stringtie_prepde/gene_count_matrix.csv"
+            },
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star_samtools_stringtie_prepde/transcript_count_matrix.csv",
+                "basename": "transcript_count_matrix.csv",
+                "class": "File",
+                "checksum": "sha1$e1821bceef6f78795c68ed55c6df0bd3e21d4f65",
+                "size": 110,
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star_samtools_stringtie_prepde/transcript_count_matrix.csv"
+            }
+        ],
+        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star_samtools_stringtie_prepde",
+        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star_samtools_stringtie_prepde"
+    },
+    "star_out": {
+        "class": "Directory",
+        "basename": "star",
+        "listing": [
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test1",
+                "basename": "test1",
+                "class": "Directory",
+                "listing": [
+                    {
+                        "class": "File",
+                        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test1/test1Log.out",
+                        "basename": "test1Log.out",
+                        "size": 18751,
+                        "checksum": "sha1$0fbc472927218c24aba322d7a2e288aa1ecfa392",
+                        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test1/test1Log.out"
+                    },
+                    {
+                        "class": "File",
+                        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test1/test1Log.progress.out",
+                        "basename": "test1Log.progress.out",
+                        "size": 246,
+                        "checksum": "sha1$8d21cdf30195c9132cea49b138d09d80a6edd00c",
+                        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test1/test1Log.progress.out"
+                    },
+                    {
+                        "class": "File",
+                        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test1/test1Aligned.out.sam",
+                        "basename": "test1Aligned.out.sam",
+                        "size": 1203490,
+                        "checksum": "sha1$68d13d257169d61b0a43d6a9ed8da3658011c610",
+                        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test1/test1Aligned.out.sam"
+                    },
+                    {
+                        "class": "File",
+                        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test1/test1SJ.out.tab",
+                        "basename": "test1SJ.out.tab",
+                        "size": 121,
+                        "checksum": "sha1$cb0ec5ed24298b4976b3164627dddb408b69c86b",
+                        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test1/test1SJ.out.tab"
+                    },
+                    {
+                        "class": "File",
+                        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test1/test1Log.final.out",
+                        "basename": "test1Log.final.out",
+                        "size": 1821,
+                        "checksum": "sha1$77a7c207c0ee7900a85050eb2229d208e70e7dfd",
+                        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test1/test1Log.final.out"
+                    }
+                ],
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test1"
+            },
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test3",
+                "basename": "test3",
+                "class": "Directory",
+                "listing": [
+                    {
+                        "class": "File",
+                        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test3/test3Log.out",
+                        "basename": "test3Log.out",
+                        "size": 17177,
+                        "checksum": "sha1$ed5f90f5df9f747b1c499f75f35bd09dd9af2590",
+                        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test3/test3Log.out"
+                    },
+                    {
+                        "class": "File",
+                        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test3/test3Log.progress.out",
+                        "basename": "test3Log.progress.out",
+                        "size": 246,
+                        "checksum": "sha1$8d21cdf30195c9132cea49b138d09d80a6edd00c",
+                        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test3/test3Log.progress.out"
+                    },
+                    {
+                        "class": "File",
+                        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test3/test3Aligned.out.sam",
+                        "basename": "test3Aligned.out.sam",
+                        "size": 722581,
+                        "checksum": "sha1$bc23c666fbe09a0ef1d346f67264d10f0293b73e",
+                        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test3/test3Aligned.out.sam"
+                    },
+                    {
+                        "class": "File",
+                        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test3/test3SJ.out.tab",
+                        "basename": "test3SJ.out.tab",
+                        "size": 120,
+                        "checksum": "sha1$1038f8816c6c84c1b2fbd3c7f4255e54f648e3c1",
+                        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test3/test3SJ.out.tab"
+                    },
+                    {
+                        "class": "File",
+                        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test3/test3Log.final.out",
+                        "basename": "test3Log.final.out",
+                        "size": 1821,
+                        "checksum": "sha1$855b119bc787d6182354052e3a282d97837679c5",
+                        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test3/test3Log.final.out"
+                    }
+                ],
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test3"
+            },
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test2",
+                "basename": "test2",
+                "class": "Directory",
+                "listing": [
+                    {
+                        "class": "File",
+                        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test2/test2Log.out",
+                        "basename": "test2Log.out",
+                        "size": 17530,
+                        "checksum": "sha1$3c93b0e15b710f3f75a0e9c47ed7924df78ec496",
+                        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test2/test2Log.out"
+                    },
+                    {
+                        "class": "File",
+                        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test2/test2Log.progress.out",
+                        "basename": "test2Log.progress.out",
+                        "size": 246,
+                        "checksum": "sha1$8d21cdf30195c9132cea49b138d09d80a6edd00c",
+                        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test2/test2Log.progress.out"
+                    },
+                    {
+                        "class": "File",
+                        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test2/test2Aligned.out.sam",
+                        "basename": "test2Aligned.out.sam",
+                        "size": 291718,
+                        "checksum": "sha1$3e812327555b989e5416f2d166865c61c73bc231",
+                        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test2/test2Aligned.out.sam"
+                    },
+                    {
+                        "class": "File",
+                        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test2/test2SJ.out.tab",
+                        "basename": "test2SJ.out.tab",
+                        "size": 118,
+                        "checksum": "sha1$cda8e85dcefbfbbf86c9f735cd05ab9718b331b4",
+                        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test2/test2SJ.out.tab"
+                    },
+                    {
+                        "class": "File",
+                        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test2/test2Log.final.out",
+                        "basename": "test2Log.final.out",
+                        "size": 1815,
+                        "checksum": "sha1$24678d24d9f61ada666400b680fbf98e316292e9",
+                        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test2/test2Log.final.out"
+                    }
+                ],
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test2"
+            },
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test4",
+                "basename": "test4",
+                "class": "Directory",
+                "listing": [
+                    {
+                        "class": "File",
+                        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test4/test4Log.out",
+                        "basename": "test4Log.out",
+                        "size": 17177,
+                        "checksum": "sha1$b721e6b5ceb709066811ec9da461abc143ab96f3",
+                        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test4/test4Log.out"
+                    },
+                    {
+                        "class": "File",
+                        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test4/test4Log.progress.out",
+                        "basename": "test4Log.progress.out",
+                        "size": 246,
+                        "checksum": "sha1$8d21cdf30195c9132cea49b138d09d80a6edd00c",
+                        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test4/test4Log.progress.out"
+                    },
+                    {
+                        "class": "File",
+                        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test4/test4Aligned.out.sam",
+                        "basename": "test4Aligned.out.sam",
+                        "size": 161476,
+                        "checksum": "sha1$32b8d30fe892991626079535523bf198289fb64f",
+                        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test4/test4Aligned.out.sam"
+                    },
+                    {
+                        "class": "File",
+                        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test4/test4SJ.out.tab",
+                        "basename": "test4SJ.out.tab",
+                        "size": 118,
+                        "checksum": "sha1$d30b2f91d550ede529900712ab30b0937c35b133",
+                        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test4/test4SJ.out.tab"
+                    },
+                    {
+                        "class": "File",
+                        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test4/test4Log.final.out",
+                        "basename": "test4Log.final.out",
+                        "size": 1815,
+                        "checksum": "sha1$cc67f9e17c8b645542375562157bea625e4a4432",
+                        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test4/test4Log.final.out"
+                    }
+                ],
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star/test4"
+            }
+        ],
+        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star",
+        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star"
+    },
+    "star_samtools_out": {
+        "class": "Directory",
+        "basename": "star_samtools",
+        "listing": [
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star_samtools/test1.bam",
+                "basename": "test1.bam",
+                "class": "File",
+                "checksum": "sha1$4bca8dad92cc74e19e70889dbaed38fb12da6e80",
+                "size": 329559,
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star_samtools/test1.bam"
+            },
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star_samtools/test3.bam",
+                "basename": "test3.bam",
+                "class": "File",
+                "checksum": "sha1$e80984213fa59ed2ebc280d56d159a62453f693a",
+                "size": 197199,
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star_samtools/test3.bam"
+            },
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star_samtools/test2.bam",
+                "basename": "test2.bam",
+                "class": "File",
+                "checksum": "sha1$6561580a9ca3989811f9af23abb6610e9be2a62d",
+                "size": 82626,
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star_samtools/test2.bam"
+            },
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star_samtools/test4.bam",
+                "basename": "test4.bam",
+                "class": "File",
+                "checksum": "sha1$67ba1e0e5f8c102587d88bac6468ae011ca26988",
+                "size": 46330,
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star_samtools/test4.bam"
+            }
+        ],
+        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star_samtools",
+        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star_samtools"
+    },
+    "star_samtools_stringtie_out": {
+        "class": "Directory",
+        "basename": "star_samtools_stringtie",
+        "listing": [
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star_samtools_stringtie/test1.gtf",
+                "basename": "test1.gtf",
+                "class": "File",
+                "checksum": "sha1$47a3a248bd3c9ab7b6d80d53d43b6d4dcbb01cc7",
+                "size": 1427,
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star_samtools_stringtie/test1.gtf"
+            },
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star_samtools_stringtie/test3.gtf",
+                "basename": "test3.gtf",
+                "class": "File",
+                "checksum": "sha1$027508c030cac320fd499393d935443d85196962",
+                "size": 1426,
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star_samtools_stringtie/test3.gtf"
+            },
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star_samtools_stringtie/test2.gtf",
+                "basename": "test2.gtf",
+                "class": "File",
+                "checksum": "sha1$a06197cf6aca402b3eda4b4cd269a3d2c927aac1",
+                "size": 1427,
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star_samtools_stringtie/test2.gtf"
+            },
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star_samtools_stringtie/test4.gtf",
+                "basename": "test4.gtf",
+                "class": "File",
+                "checksum": "sha1$244a1ee70fdf699e8414619397acc1de43a57b51",
+                "size": 1425,
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star_samtools_stringtie/test4.gtf"
+            }
+        ],
+        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star_samtools_stringtie",
+        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star_samtools_stringtie"
+    },
+    "star_samtools_stringtie_prepde_deseq2_out": {
+        "class": "Directory",
+        "basename": "star_samtools_stringtie_prepde_deseq2",
+        "listing": [
+            {
+                "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star_samtools_stringtie_prepde_deseq2/groupNormal-groupTumour_DGE_results.csv",
+                "basename": "groupNormal-groupTumour_DGE_results.csv",
+                "class": "File",
+                "checksum": "sha1$0161610474f665d56fcea107f0bbc6e2d32c8034",
+                "size": 302,
+                "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star_samtools_stringtie_prepde_deseq2/groupNormal-groupTumour_DGE_results.csv"
+            }
+        ],
+        "location": "file:///data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star_samtools_stringtie_prepde_deseq2",
+        "path": "/data/tony/Data/fcd72896-218a-45f8-be02-361b3c94e192/output/star_samtools_stringtie_prepde_deseq2"
+    }
+}
+[2019-03-04 13:04:33] Final process status is success

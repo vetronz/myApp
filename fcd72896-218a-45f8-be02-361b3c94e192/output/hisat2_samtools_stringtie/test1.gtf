@@ -1,0 +1,12 @@
+# stringtie -eB /var/lib/cwl/stg7ca57af8-e6a3-4fa0-9bbc-f696be7e9350/test1.bam -p 2 -G /var/lib/cwl/stga37f65ae-eb36-45d3-9179-08c0745e2def/test.gtf -o test1.gtf
+# StringTie version 1.3.0
+test1	StringTie	transcript	500	999	1000	+	.	gene_id "gene1"; transcript_id "trans1"; cov "28.280001"; FPKM "79210.140625"; TPM "86548.687500";
+test1	StringTie	exon	500	999	1000	+	.	gene_id "gene1"; transcript_id "trans1"; exon_number "1"; cov "28.280001";
+test1	StringTie	transcript	3000	5299	1000	-	.	gene_id "gene2"; transcript_id "trans2"; cov "292.640472"; FPKM "819663.750000"; TPM "895602.875000";
+test1	StringTie	exon	3000	3299	1000	-	.	gene_id "gene2"; transcript_id "trans2"; exon_number "1"; cov "224.833878";
+test1	StringTie	exon	4400	4999	1000	-	.	gene_id "gene2"; transcript_id "trans2"; exon_number "2"; cov "376.059998";
+test1	StringTie	exon	5050	5299	1000	-	.	gene_id "gene2"; transcript_id "trans2"; exon_number "3"; cov "173.801514";
+test1	StringTie	transcript	3000	5299	1000	-	.	gene_id "gene2"; transcript_id "trans3"; cov "5.832023"; FPKM "16335.054688"; TPM "17848.441406";
+test1	StringTie	exon	3000	3299	1000	-	.	gene_id "gene2"; transcript_id "trans3"; exon_number "1"; cov "0.000000";
+test1	StringTie	exon	3500	3999	1000	-	.	gene_id "gene2"; transcript_id "trans3"; exon_number "2"; cov "10.666000";
+test1	StringTie	exon	5050	5299	1000	-	.	gene_id "gene2"; transcript_id "trans3"; exon_number "3"; cov "3.162495";

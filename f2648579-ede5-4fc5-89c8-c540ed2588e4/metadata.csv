@@ -1,0 +1,5 @@
+"","condition","libtype"
+"test1","Normal","PE"
+"test2","Tumour","PE"
+"test3","Normal","SG"
+"test4","Tumour","SG"
