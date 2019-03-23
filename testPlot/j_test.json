@@ -1,0 +1,893 @@
+[
+    {
+        "": "ENSG00000282222",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000282221",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000212040",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000110514",
+        "baseMean": "31.4527283657085",
+        "log2FoldChange": "0.16332072805397",
+        "lfcSE": "0.866862622935571",
+        "stat": "0.188404395036546",
+        "pvalue": "0.850559654652437",
+        "padj": "0.999838284898011"
+    },
+    {
+        "": "ENSG00000086015",
+        "baseMean": "24.8563131760391",
+        "log2FoldChange": "0.14841577440129",
+        "lfcSE": "1.0015397749556",
+        "stat": "0.148187598847853",
+        "pvalue": "0.882194718449548",
+        "padj": "0.999838284898011"
+    },
+    {
+        "": "ENSG00000211769",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000211768",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000250337",
+        "baseMean": "0.75",
+        "log2FoldChange": "-1.11008830643767",
+        "lfcSE": "1.44245171088193",
+        "stat": "-0.769584380581413",
+        "pvalue": "0.441546473211556",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000255071",
+        "baseMean": "6.49229307037792",
+        "log2FoldChange": "0.478544984523653",
+        "lfcSE": "1.42741917596095",
+        "stat": "0.33525189557685",
+        "pvalue": "0.737435077763055",
+        "padj": "0.999838284898011"
+    },
+    {
+        "": "ENSG00000211767",
+        "baseMean": "0.281124220529969",
+        "log2FoldChange": "0.868835770998757",
+        "lfcSE": "1.37480329764506",
+        "stat": "0.63197096812832",
+        "pvalue": "0.527405848007029",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000211766",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000211765",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000211764",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000201510",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000169740",
+        "baseMean": "47.1197979129705",
+        "log2FoldChange": "0.176313749090508",
+        "lfcSE": "0.828300769513786",
+        "stat": "0.212861988760441",
+        "pvalue": "0.831434611471064",
+        "padj": "0.999838284898011"
+    },
+    {
+        "": "ENSG00000215869",
+        "baseMean": "0.25",
+        "log2FoldChange": "-0.855266917860253",
+        "lfcSE": "1.36709826282933",
+        "stat": "-0.625607493707295",
+        "pvalue": "0.531572422357683",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000261609",
+        "baseMean": "7.26202837470472",
+        "log2FoldChange": "-0.232538722210896",
+        "lfcSE": "1.27182172634224",
+        "stat": "-0.182839086166327",
+        "pvalue": "0.854924279200815",
+        "padj": "0.999838284898011"
+    },
+    {
+        "": "ENSG00000169744",
+        "baseMean": "42.7813373733638",
+        "log2FoldChange": "-4.62861501756595",
+        "lfcSE": "0.99873419754578",
+        "stat": "-4.6344813554397",
+        "pvalue": "3.57833481830584e-06",
+        "padj": "0.000329385720025053"
+    },
+    {
+        "": "ENSG00000261607",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000261606",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000215866",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000261604",
+        "baseMean": "2.2121750856082",
+        "log2FoldChange": "0.530975279810381",
+        "lfcSE": "1.58070369734582",
+        "stat": "0.335910696420809",
+        "pvalue": "0.736938210701988",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000261603",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000261602",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000261600",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000251074",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000168298",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000255070",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000168297",
+        "baseMean": "20.2909864992894",
+        "log2FoldChange": "0.827994276067856",
+        "lfcSE": "0.968167890587519",
+        "stat": "0.855217658133032",
+        "pvalue": "0.392430662331851",
+        "padj": "0.999838284898011"
+    },
+    {
+        "": "ENSG00000266460",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000266461",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000266466",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000233578",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000168291",
+        "baseMean": "76.4920346031292",
+        "log2FoldChange": "0.653621182437188",
+        "lfcSE": "0.728305184590261",
+        "stat": "0.8974550727727",
+        "pvalue": "0.36947613661645",
+        "padj": "0.990116451699776"
+    },
+    {
+        "": "ENSG00000262558",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000270591",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000262554",
+        "baseMean": "1.5",
+        "log2FoldChange": "-1.96888623526846",
+        "lfcSE": "1.57737920779674",
+        "stat": "-1.24820095607737",
+        "pvalue": "0.211957473930103",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000254141",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000225108",
+        "baseMean": "0.25",
+        "log2FoldChange": "-0.855266917860253",
+        "lfcSE": "1.36709826282933",
+        "stat": "-0.625607493707295",
+        "pvalue": "0.531572422357683",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000225100",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000225101",
+        "baseMean": "0.843372661589906",
+        "log2FoldChange": "1.12422743659265",
+        "lfcSE": "1.4464387205867",
+        "stat": "0.777238206217708",
+        "pvalue": "0.437018244916452",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000225102",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000225105",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000225106",
+        "baseMean": "1.03112422052997",
+        "log2FoldChange": "-0.49344296964382",
+        "lfcSE": "1.51819392902879",
+        "stat": "-0.325019722585429",
+        "pvalue": "0.745166144906346",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000225107",
+        "baseMean": "0.412534949345529",
+        "log2FoldChange": "0.980971711963575",
+        "lfcSE": "1.41086714043019",
+        "stat": "0.695297015468418",
+        "pvalue": "0.486869184255752",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000226457",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000226455",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000226454",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000149792",
+        "baseMean": "37.1032944687583",
+        "log2FoldChange": "0.188649971434523",
+        "lfcSE": "0.84905714129752",
+        "stat": "0.222187603470633",
+        "pvalue": "0.824167843945108",
+        "padj": "0.999838284898011"
+    },
+    {
+        "": "ENSG00000226450",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000141854",
+        "baseMean": "3.93695847601367",
+        "log2FoldChange": "0.46047463829742",
+        "lfcSE": "1.50555057907674",
+        "stat": "0.30585132422439",
+        "pvalue": "0.75971784862532",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000149798",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000238419",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000283571",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000212153",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000183055",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000183054",
+        "baseMean": "11.9561138502479",
+        "log2FoldChange": "-0.201996244071415",
+        "lfcSE": "1.16504278533598",
+        "stat": "-0.173380966445075",
+        "pvalue": "0.86235198510526",
+        "padj": "0.999838284898011"
+    },
+    {
+        "": "ENSG00000283575",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000283576",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000283579",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000283578",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000181562",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000250566",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000259244",
+        "baseMean": "0.5",
+        "log2FoldChange": "-1.02550367550925",
+        "lfcSE": "1.42166178129196",
+        "stat": "-0.721341523704256",
+        "pvalue": "0.470699415056661",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000250564",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000250565",
+        "baseMean": "3.06267474672764",
+        "log2FoldChange": "0.592485939879733",
+        "lfcSE": "1.57857273162935",
+        "stat": "0.375330149829832",
+        "pvalue": "0.707414946065884",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000250562",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000250563",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000187961",
+        "baseMean": "6.84300588433122",
+        "log2FoldChange": "1.36502037334432",
+        "lfcSE": "1.38281134257847",
+        "stat": "0.987134203570409",
+        "pvalue": "0.323576852026034",
+        "padj": "0.969977876729356"
+    },
+    {
+        "": "ENSG00000250561",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000250568",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000250569",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000281591",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000162840",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000162843",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000168484",
+        "baseMean": "3.97520969607317",
+        "log2FoldChange": "0.444817349320864",
+        "lfcSE": "1.55576953680879",
+        "stat": "0.285914680032415",
+        "pvalue": "0.774943469849973",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000162849",
+        "baseMean": "2.2306910013409",
+        "log2FoldChange": "2.52000831862041",
+        "lfcSE": "1.5903600359272",
+        "stat": "1.58455208989907",
+        "pvalue": "0.113068137683303",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000283689",
+        "baseMean": "0.618802424018293",
+        "log2FoldChange": "1.06979771171814",
+        "lfcSE": "1.4341121945058",
+        "stat": "0.745965145416531",
+        "pvalue": "0.455688470253295",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000149243",
+        "baseMean": "9.02810551324922",
+        "log2FoldChange": "1.33881436054475",
+        "lfcSE": "1.38521042781808",
+        "stat": "0.966506123299684",
+        "pvalue": "0.333790984382096",
+        "padj": "0.974546546173762"
+    },
+    {
+        "": "ENSG00000184702",
+        "baseMean": "5.66253494934553",
+        "log2FoldChange": "-2.46787012586263",
+        "lfcSE": "1.4504542901992",
+        "stat": "-1.70144632791131",
+        "pvalue": "0.0888592081809917",
+        "padj": "0.574287169422488"
+    },
+    {
+        "": "ENSG00000259242",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000283683",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000283682",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000283680",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000283686",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000184708",
+        "baseMean": "12.7115951555157",
+        "log2FoldChange": "-0.452942131038329",
+        "lfcSE": "1.09128143231305",
+        "stat": "-0.415055289704952",
+        "pvalue": "0.678101428653936",
+        "padj": "0.999838284898011"
+    },
+    {
+        "": "ENSG00000184709",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000206811",
+        "baseMean": "0.281124220529969",
+        "log2FoldChange": "0.868835770998757",
+        "lfcSE": "1.37480329764506",
+        "stat": "0.63197096812832",
+        "pvalue": "0.527405848007029",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000163462",
+        "baseMean": "12.8525954818477",
+        "log2FoldChange": "2.58218828123012",
+        "lfcSE": "1.24597587885536",
+        "stat": "2.0724223679212",
+        "pvalue": "0.0382260691576385",
+        "padj": "0.345940557046691"
+    },
+    {
+        "": "ENSG00000163463",
+        "baseMean": "77.3656431663034",
+        "log2FoldChange": "0.717414910936301",
+        "lfcSE": "0.833112760631155",
+        "stat": "0.861125822142968",
+        "pvalue": "0.389168748718243",
+        "padj": "0.999838284898011"
+    },
+    {
+        "": "ENSG00000163464",
+        "baseMean": "2.5",
+        "log2FoldChange": "-2.70414562261168",
+        "lfcSE": "1.58779396378945",
+        "stat": "-1.70308345054917",
+        "pvalue": "0.0885524525398302",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000163466",
+        "baseMean": "280.062894833934",
+        "log2FoldChange": "0.323039647841475",
+        "lfcSE": "0.640155784364279",
+        "stat": "0.504626617038659",
+        "pvalue": "0.613821111353327",
+        "padj": "0.999838284898011"
+    },
+    {
+        "": "ENSG00000163467",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000163468",
+        "baseMean": "154.995055637593",
+        "log2FoldChange": "0.954964765947652",
+        "lfcSE": "0.699177938982089",
+        "stat": "1.36583938466073",
+        "pvalue": "0.171989381611882",
+        "padj": "0.784856082048509"
+    },
+    {
+        "": "ENSG00000206813",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000162599",
+        "baseMean": "63.1598484517167",
+        "log2FoldChange": "-1.04694942912193",
+        "lfcSE": "0.767743249300141",
+        "stat": "-1.36367129255296",
+        "pvalue": "0.172671043040743",
+        "padj": "0.786293898115213"
+    },
+    {
+        "": "ENSG00000162598",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000267731",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    },
+    {
+        "": "ENSG00000272386",
+        "baseMean": "0",
+        "log2FoldChange": "NA",
+        "lfcSE": "NA",
+        "stat": "NA",
+        "pvalue": "NA",
+        "padj": "NA"
+    }
+]
